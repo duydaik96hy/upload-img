@@ -1,0 +1,1 @@
+export const baseUrl = process?.env?.wsOrigin ? `https://${process?.env?.wsOrigin}` : "http://localhost:8080";
