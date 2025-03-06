@@ -23,8 +23,6 @@ const storage = multer.diskStorage({
     const uid = uuid();
     cb(
       null,
-        req.headers.username +
-        "-" +
         Base64.encode(file.originalname + uid) +
         Date.now() +
         path.extname(file.originalname)

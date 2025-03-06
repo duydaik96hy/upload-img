@@ -4,8 +4,6 @@ import { cors } from "./middlewares/cors";
 import { uar } from "./middlewares/uar";
 import { serverConfig } from "./serverConfig";
 import http from "http";
-import { PostsRouter } from "./router/Posts";
-import { UsersRouter } from "./router/Users";
 import { NewsRouter } from "./router/News";
 
 
@@ -33,10 +31,6 @@ app.set("view engine", "html");
 
 // ========================================================== Serving static content
 
-app.use("/posts", express.static(path.join(__dirname, "/posts")));
-
-app.use("/users", express.static(path.join(__dirname, "/users")));
-
 app.use("/news", express.static(path.join(__dirname, "/news")));
 
 app.use("/swagger", express.static("swagger"), (req, res) => {
@@ -44,10 +38,6 @@ app.use("/swagger", express.static("swagger"), (req, res) => {
     root: serverConfig.cwd,
   });
 });
-
-app.use("/post", PostsRouter);
-
-app.use("/user",UsersRouter);
 
 app.use('/new',NewsRouter);
 
