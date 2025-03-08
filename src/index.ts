@@ -5,6 +5,8 @@ import { uar } from "./middlewares/uar";
 import { serverConfig } from "./serverConfig";
 import http from "http";
 import { NewsRouter } from "./router/News";
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 
 // sharp 压缩图片
