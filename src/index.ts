@@ -33,7 +33,7 @@ app.set("view engine", "html");
 
 // ========================================================== Serving static content
 
-app.use("/news", express.static(path.join(__dirname, "/news")));
+app.use("/news", express.static(path.join(process.cwd(), "/public/upload/news")));
 
 app.use("/swagger", express.static("swagger"), (req, res) => {
   res.sendFile("./index.html", {
